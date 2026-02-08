@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Registration Form</title>
+  <style>
+    body {
+      font-family: 'Times New Roman';
+      /* padding: 20px; */
+      background-color: #f2f2f2;
+    }
+
+    form {
+      background-color: white;
+      padding: 20px;
+      border-radius: 15px;
+      width: 400px;
+      margin: auto;
+      /* margin-left: 450px; */
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 2px solid rgb(100, 90, 90); ;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    .gender-options {
+      display: flex;
+      justify-content: space-evenly;
+      gap: 10px;
+      
+      
+    }
+    .gender-options label {
+        display: flex;
+        flex-direction: column; /* put radio on top, text below */
+        align-items: center;    /* center text under the button */
+        border: 2px solid rgb(100, 90, 90);   /* adds a border around each option */
+        border-radius: 8px;
+        padding: 10px;
+        width: 80px;              /* same width for all options */
+        cursor: pointer;
+        
+        
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: medium;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+    .signin {
+      text-align: center;
+      margin-top: 5px;
+    }
+    .signin a{
+        text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="" method="get">
+    <h2>User Registration</h2>
+
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname" name="fullname" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label>Gender</label>
+    <div class="gender-options">
+      <label><input type="radio" name="gender" value="Male" required> Male</label>
+      <label><input type="radio" name="gender" value="Female"> Female</label>
+      
+    </div>
+
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label for="address">Address</label>
+    <textarea id="address" name="address" rows="3" required></textarea>
+
+    <label for="country">Country</label>
+    <select id="country" name="country" required>
+      <option value="">Select Country</option>
+      <option value="IND">India</option>
+      <option value="CAN">Canada</option>
+      <option value="UK">UK</option>
+      <option value="AUS">Australia</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Register</button>
+    <div class="signin">
+      Already registered? <a href="/form2.html">Sign in</a>
+    </div>
+  </form>
+
+</body>
+</html>

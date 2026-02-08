@@ -1,0 +1,57 @@
+<<<<<<< HEAD
+.box{
+    display: block;
+    
+}
+.cont{
+    display: inline-block;
+    background-color: pink;
+    height: 100px;
+    width: 100px;
+}
+@media (max-width : 600px) {
+    body{
+        background-color: yellow;
+    }
+    
+}
+=======
+*{
+    padding: 0;
+    margin: 0;
+    color:white;
+    
+}
+#navbar{
+    height: 60px;
+    background-color: #0f1111;
+    border-width: 2px;
+    border-style: solid;
+    border-color: blue;
+}
+button{
+    background-color: #f08804;
+}
+#logo{
+    color: #f08804;
+    font-size: 25px;
+}
+a{
+    margin-right: 200px;
+    text-decoration: none;
+}
+.contentBox{
+    height: 100px;
+    width: 100px;
+    border: 2px,solid, black;
+    display: inline-block;
+    
+}
+#content{
+    height: 550px;
+}
+footer{
+    background-color:#0f1111 ;
+    text-align: center;
+}
+>>>>>>> cb068eb2700475f579124e4abf563a90f682172d

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes moveRight {
+            from { transform: translateX(0); }
+            to { transform: translateX(200px); } 
+            /* or */
+            0% { left: 0; background: red; }
+            50% { left: 100px; background: yellow; }
+            100% { left: 200px; background: green; }
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background: royalblue;
+            animation-name: moveRight;
+            animation-duration: 3s;
+            animation-direction: reverse;
+            animation-fill-mode: both;
+        }
+    </style>
+</head>
+<body>
+    <div>div1</div>
+</body>
+</html>
