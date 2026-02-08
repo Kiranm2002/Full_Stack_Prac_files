@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrink and Grow</title>
+    <style>
+        .container {
+            display: flex;
+            width: 600px;
+            background: lightgray;
+        }
+
+        .box {
+            background: orange;
+            height: 100px;
+            width: 150px;
+            margin: 5px;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+        }
+
+        /* Grow behavior */
+        .box1 { flex-shrink: 1; }
+        .box2 { flex-shrink: 2; }
+        .box3 { flex-shrink: 1; }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+    </div>
+</body>
+</html>

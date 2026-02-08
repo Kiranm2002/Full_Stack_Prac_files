@@ -1,0 +1,78 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+            /* display: block, inline, inline-block, none; */
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+    <div>div6</div>
+    <div>div7</div>
+    <div>div8</div>
+    <div>div9</div>
+    <div>div10</div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;  /* Center horizontally */
+            align-items: center;      
+            height: 900px;
+            background: lightgray;
+            /* flex-direction: column; */
+            flex-wrap: wrap;
+            gap: 10px;
+            align-content: flex-start;
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+        }
+        .box:nth-child(2){
+            order:1
+        }
+        .box:nth-child(1){
+            order:3
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+        <div class="box">D</div>
+        <div class="box">E</div>
+        <div class="box">F</div>
+        
+    </div>
+
+</body>
+</html>
+
+

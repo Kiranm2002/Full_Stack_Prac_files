@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* min-height: 100vh;
+            margin: 0; */
+        }
+
+        /* Form Container */
+        form {
+            width: 350px;
+            /* Height is now managed by content, not fixed */
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            /* margin-bottom: 20px; */
+            /* color: #333; */
+            font-size: 24px;
+        }
+
+        /* Grouping for Consistent Spacing */
+        .form-group {
+            margin-bottom: 10px; /* Default space between groups */
+        }
+
+        /* Extra Gap for DOB and Gender */
+        .spaced-group {
+            margin-top: 25px; /* Creates the desired larger gap above these sections */
+        }
+
+        /* Input, Select, Textarea, Button Base Styles */
+        form input, /* Excludes radio buttons from 100% width */
+        form select,
+        form textarea {
+            width: 100%;
+            /* margin-top: 5px; */
+            padding: 8px; /* Slightly increased padding for better appearance */
+            font-size: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* General Label Styles */
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold; /* Making main labels bold */
+        }
+
+        /* --- Gender Specific Styling --- */
+        
+        /* Container for Male/Female options, arranges them horizontally */
+        .gender-group {
+            display: flex; 
+            justify-content: space-around; /* Adds space between Male and Female options */
+            width: 50%; /* Keeps the options contained */
+            margin-top: 10px; 
+            margin-bottom: 0; /* Ensures the radio section doesn't have double spacing */
+        }
+        
+        /* Wrapper for each Radio Button + Label, arranges them vertically */
+        .gender-option {
+            display: flex;
+            flex-direction: column; /* Stacks the input and label vertically */
+            align-items: center; /* Centers the input and label horizontally */
+            text-align: center;
+        }
+        
+        /* Styling for the radio buttons themselves */
+        .gender-option input[type="radio"] {
+            width: auto; /* Overrides the 100% width */
+            margin: 0; 
+        }
+
+        /* Styling for the text label under the radio button */
+        .gender-option label {
+            display: block;
+            margin-top: 5px; /* Gap between button and text */
+            margin-bottom: 0;
+            font-weight: normal; /* Labels under radio buttons are usually not bold */
+            font-size: 14px; /* Slightly smaller text for better look */
+        }
+        
+        /* --- Button Styling --- */
+        form button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 10px; /* Better padding for button */
+            margin-top: 20px;
+            width: 100%;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        form button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="" method="get">
+        <h1>User Registration Form</h1>
+        
+        <div class="form-group">
+            <input type="text" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <input type="password" placeholder="Password" required>
+        </div>
+        
+        <div class="form-group">
+            <input type="tel" placeholder="Phone no" required>
+        </div>
+        
+        <div class="form-group spaced-group"> 
+            <label>Date of Birth</label>
+            <input type="date" placeholder="DOB">
+        </div>
+
+        <div class="form-group spaced-group"> 
+            <label>Gender:</label>
+            
+            <div class="gender-group">
+
+                <div class="gender-option">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                </div>
+
+                <div class="gender-option">
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <textarea placeholder="Address" rows="3"></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <select name="Country" id="country">
+                <option value="">Select Country</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="Russia">Russia</option>
+            </select>
+        </div>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
