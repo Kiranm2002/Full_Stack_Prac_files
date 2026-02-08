@@ -1,0 +1,26 @@
+
+--using/calling column name by alias name
+select user_name as person from e_users;
+
+select *,user_name as person from e_users
+
+--Subquiries/nested query using where cluase
+select * from country where population > (select avg(population) from country);
+select * from country where continent='Asia' and population > 
+(select avg(population) from country);
+
+--Subquiries/nested query using Select cluase
+select count(*) as num_of_cities from city where countrycode='IND';
+select country.code,country.name,
+    (select count(*) from city where countrycode=country.code) as num_of_cities from country;
+
+
+--Subquiries/nested query using Exists or in cluase
+ select * from countrylanguage where language='English' and isofficial='T';
+
+ 
+--Subquiries/nested query using Aggregators
+select name from country where
+    lifeExpectancy=(select Max(lifeExpectancy) from country);
+
+

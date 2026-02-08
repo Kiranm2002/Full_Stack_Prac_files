@@ -1,0 +1,145 @@
+to create table and manupulate inside a Db : CRUD
+
+-- to create table and columns
+CREATE TABLE users(
+    user_id INT,
+    user_name VARCHAR(100),
+    email VARCHAR(100),
+    password VARCHAR(255),
+    created_at TIMESTAMP
+);
+
+--to see coulmns
+describe table_name
+
+-- to insert data into tables:
+INSERT INTO users (user_id,user_name,email,password)VALUES(1,'kiran','kiran@gmail.com','ABCD123')
+
+-- to read data from table:
+select * from table_name
+where * means all, we can use columns name
+
+
+-- Keywords for condition
+where, and, not / <>, or, in, between, like, order by ASC / DESC, is null, is not null, exists, limit
+
+-- filtering based on condition:
+select name,population from city where district='karnataka';
+select name,population from city where district='karnataka' limit 4/5/6...;
+select * from city<table> where District="Karnataka";
+we can also use limit 4/5/6....
+
+select * from city<table> where District="Karnataka" and Population > 200000;
+
+select * from city where District in ('Karnataka','Tamil Nadu','Madhya Pradesh');
+select * from city where District not in ('Karnataka','Tamil Nadu','Madhya Pradesh');
+select * from city where District='Karnataka' and Population between 200000 and 300000;
+select * from city where District='Karnataka' and name like '%re'; --ends with re
+select * from city where District='Karnataka' and name like 'M%'; --starts with M
+select * from city where District='Karnataka' and name like '%ng%'; --contains ng
+select * from city where district='karnataka' and name like '_a____';  --second letter a and five letter word
+select * from city where District='Karnataka' order by name; --gives in alpha order/ use asc
+select * from city where District='Karnataka' order by name desc; --in desc order
+
+
+--Aggregators
+SUM, Average, Min, max, count
+
+select count(*) from city where District='Karnataka';  --gives count of rows
+select max(Population) from city where District='Karnataka';  --gives max population value
+select min(Population) from city where District='Karnataka';  
+select max(name) from city where District='Karnataka';  --give result of string based on ASCII value
+select avg(population) from city where District='Karnataka'; --give avg value
+select sum(population) from city where District='Karnataka'; --gives sum ()
+
+--Group by
+select continent,count(*) as total_coun from country
+->Group by continent;
+
+--Updating table
+UPDATE table_name SET
+    col1 = value
+    col2 = value...
+where <condition>   --if cond is not given it will update all col&rows
+
+--Modifying the table & table columns
+ALTER TABLE students RENAME TO Employees; --renames the table name
+ALTER TABLE students ADD roll_no varchar(20); --adds new col
+ALTER TABLE students DROP [column] roll_no;  --deletes a col
+ALTER TABLE students MODIFY column roll_no int; --changes the datatype of column
+ALTER TABLE students CHANGE column roll_no sl_no int; -- changes the title of column 
+TRUNCATE TABLE students; --it will delete entire data from table, but table still exists
+
+
+--Constraints
+unique, check,not null,default,Primary key,foreign key,AUTO_INCREMENT,Index
+CREATE table users(
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_name varchar(50) NOT NULL,
+    email varchar(100) NOT NULL UNIQUE,
+    password  varchar(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+ALTER TABLE customer ADD Constraints UNIQUE (email) --adding constraints to already created table
+ALTER TABLE customer Drop Constraints UNIQUE (email) -- to drop constarint or
+ALTER TABLE customer Drop  Index email;
+--or
+ALTER TABLE customer Modify col_name constraints
+
+--to create index
+create index cust_name on customer(name);
+
+
+--e commerce data
+ create table Customer(
+     id INT PRIMARY KEY AUTO_INCREMENT,
+     name varchar(50),
+     email varchar(50),
+     address varchar(255)
+    );
+insert into customer(name,email,address) values
+('kiran','Kiran@gmail.com','bang'),
+('rohan','rohan@gmail.com','tiptur'),
+('darshan','darshan@gmail.com','tiptur');
+
+--if in case of auto increment key must be primary
+insert into customer(id,name,email,address) values
+(3,'kiran','Kiran@gmail.com','bang') --gives error id if already present
+insert into customer(id,name,email,address) values
+(4,'kiran','Kiran@gmail.com','bang'), --adds if id is not present
+
+--if after 4 we give id 10, then it will continue from there
+
+create table product(
+    id int,
+    title varchar(50),
+    description varchar(50),
+    price varchar(50),
+    unique(id)
+);
+--best way
+create table product(
+    id int AUTO_INCREMENT,
+    title varchar(50) Not null ,
+    description varchar(50),
+    price varchar(50),
+    primary key (id),
+    unique(title)
+);
+ unique(id), unique(title) --supports multiple unique keys
+ Primary KEY (id), Primary KEY (title) --multiple primary key is not supported
+
+
+--check constraint
+create table voters(
+    id int not null AUTO_INCREMENT Primary key,
+    name varchar(255),
+    age int,
+    check (age > 17) --or to give name
+    Constraints voters_chk_age check(age>17)
+);
+--advantages of check is if insert is failed it not auto_increment
+
+
+
+
