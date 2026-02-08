@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Local Storage</h3>
+    <!-- <button onclick="saveToLocal('name','kiran')">Save to local storage</button>
+    <button onclick="alert(getFromLocal('name'))">get from local storage</button>
+    <button onclick="removeFromLocal('name')">remove from local storage</button>
+
+    <button onclick="saveToLoc('name','kiran')">click</button>
+    <a onclick="console.log(getLoc('name'))">get</a>
+    <button onclick="remLoc('name')">remove</button>
+    <button onload="addobject('user')">add object</button> -->
+
+    <!-- <button onclick="saveToLoc('name','kiran')">Save</button>
+     <button onclick="console.log(getLoc('name'))">Save</button>
+    <button onclick="delLoc('name')">Save</button> -->
+    <button onclick="savetoLoc('name','kiran')">save</button>
+    <button onclick="alert(getLoc())">get</button>
+    <button onclick="delLoc('name')">del</button>
+
+
+    <script>
+
+        function savetoLoc(key,value){
+            localStorage.setItem(key,value)
+        }
+        function getLoc(key){
+            return localStorage.getItem(key)
+        }
+        function delLoc(key){
+            localStorage.removeItem(key)
+        }
+
+
+
+        // function saveToLoc(key,val){
+        //     localStorage.setItem(key,val)
+        // }
+        // function getLoc(key){
+        //    return localStorage.getItem(key)
+        // }
+        // function delLoc(key){
+        //     localStorage.removeItem(key)
+        // }
+
+
+        // function saveToLocal(key,value){
+        //     localStorage.setItem(key,value);
+        // }
+        // function getFromLocal(key){
+        //     return localStorage.getItem(key);
+        // }
+        // function removeFromLocal(key){
+        //     localStorage.removeItem(key);
+        // }
+
+        // function saveToLoc(key,val){
+        //     localStorage.setItem(key,val)
+        // }
+        // function getLoc(key){
+        //     return localStorage.getItem(key)
+        // }
+        // function remLoc(key){
+        //     localStorage.removeItem(key)
+        // }
+        // function addobject(user){
+        //     let user={name:'kiran',age:23}
+        //     localStorage.setItem("user",JSON.stringify(user))
+        // }
+    </script>
+</body>
+</html>
