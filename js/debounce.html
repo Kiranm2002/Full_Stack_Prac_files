@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="search" id="search" placeholder="Search..." />
+
+    
+    <script>
+        function deb(fn,delay){
+            let timer;
+            return function(){
+                clearTimeout(timer);
+                timer=setTimeout(()=>{
+                    fn();
+
+                },delay)
+            }
+        }
+        function search(){
+            console.log("API call");
+            
+        }
+        // let ds=deb(search,1000)
+        document.getElementById('search').addEventListener(("keyup"),deb(search,1000))
+    </script>
+</body>
+</html>

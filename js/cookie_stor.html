@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Cookies storage</h3>
+    <button onclick="setCok()">set cookie</button>
+    <button onclick="getCok()">get cookie</button>
+    <button onclick="delCok()">del cookie</button>
+
+    <p id="output"></p>
+
+    <script>
+        function setCok(){
+            document.cookie="user=kiran path=/";
+            document.getElementById('output').innerText='cookie set'
+        }
+        function getCok(){
+            console.log(document.cookie)
+        }
+        function delCok(){
+            document.cookie="user=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            document.getElementById('output').innerText='cookie deleted'
+        }
+    </script>
+</body>
+</html>
