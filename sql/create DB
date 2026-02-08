@@ -1,0 +1,12 @@
+To show existing databases: show databases;
+
+To create DB : create database db_name;
+
+to delete Db ; drop database db_name;
+
+to read/use DB: use db_name;
+
+to show tables inside test DB: show tables;
+
+
+      
